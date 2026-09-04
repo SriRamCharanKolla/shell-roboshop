@@ -69,11 +69,11 @@ flowchart TD
     UserBrowser -->|HTTP Port 80| PublicDNS
     PublicDNS --> Frontend
 
-    Frontend -->|"/api/catalogue/"| Catalogue
-    Frontend -->|"/api/user/"| UserService
-    Frontend -->|"/api/cart/"| Cart
-    Frontend -->|"/api/shipping/"| Shipping
-    Frontend -->|"/api/payment/"| Payment
+    Frontend -->|/api/catalogue/| Catalogue
+    Frontend -->|/api/user/| UserService
+    Frontend -->|/api/cart/| Cart
+    Frontend -->|/api/shipping/| Shipping
+    Frontend -->|/api/payment/| Payment
 
     Catalogue -->|Fetches Products| MongoDB
     UserService -->|Auth & Profiles| MongoDB
@@ -305,12 +305,12 @@ flowchart LR
     end
 
     Browser --> NginxRoute
-    NginxRoute -->|"/" or "/images/"| StaticAssets
-    NginxRoute -->|"/api/catalogue/"| CatSvc
-    NginxRoute -->|"/api/user/"| UserSvc
-    NginxRoute -->|"/api/cart/"| CartSvc
-    NginxRoute -->|"/api/shipping/"| ShipSvc
-    NginxRoute -->|"/api/payment/"| PaySvc
+    NginxRoute -->|Root or Images| StaticAssets
+    NginxRoute -->|/api/catalogue/| CatSvc
+    NginxRoute -->|/api/user/| UserSvc
+    NginxRoute -->|/api/cart/| CartSvc
+    NginxRoute -->|/api/shipping/| ShipSvc
+    NginxRoute -->|/api/payment/| PaySvc
 ```
 
 * **Key Reverse Proxy Rules in [nginx.conf](file:///Users/sriramcharankolla/Desktop/DevOps/shell-roboshop/nginx.conf#L50-L54):**
